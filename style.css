@@ -8,21 +8,16 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  background: #353540;
+  background: #1b2838;
 }
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50px;
+  place-items: center;
+  padding: 3em 0;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
   width: 100%;
-}
-
-@media screen and (min-width: 760px) {
-  .cards-container {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 2em 5em;
-  }
 }
 
 .card {
@@ -84,4 +79,33 @@ body {
   opacity: 0;
   will-change: transform;
   transition: opacity 0.21s ease-in-out;
+}
+
+@media screen and (min-width: 700px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card:nth-child(odd) {
+    margin-left: auto;
+  }
+  .card:nth-child(even) {
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 2em;
+    padding-right: 2em; 
+  }
+  .card {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

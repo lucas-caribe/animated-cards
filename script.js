@@ -4,11 +4,11 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
   card.addEventListener('mousemove', function(event) {
-    const { pageX, pageY } = event;
+    const { clientX, clientY } = event;
     const { target } = event;
     const bounding = target.getBoundingClientRect();
-    const x = Math.max(0, pageX - Math.round(bounding.left));
-    const y = Math.max(0, pageY - Math.round(bounding.top));
+    const x = Math.max(0, clientX - Math.round(bounding.left));
+    const y = Math.max(0, clientY - Math.round(bounding.top));
     const width = bounding.width;
     const height = bounding.height;
 
